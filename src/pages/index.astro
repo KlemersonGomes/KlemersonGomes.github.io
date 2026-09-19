@@ -1,17 +1,48 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
 
+const currentYear = new Date().getFullYear();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+	title="Klemerson Gomes | Dados & Analytics"
+	description="Portfólio profissional de Klemerson Gomes, profissional de Dados e Analytics."
+>
+	<main>
+		<Hero />
+		<section id="sobre" aria-labelledby="titulo-sobre">
+			<h2 id="titulo-sobre">Sobre</h2>
+
+			<p>
+				Atuo transformando necessidades de negócio em análises, dashboards e
+				informações que ajudam pessoas e equipes a tomarem decisões melhores.
+			</p>
+		</section>
+
+		<section id="experiencia" aria-labelledby="titulo-experiencia">
+			<h2 id="titulo-experiencia">Experiência</h2>
+
+			<p>
+				Minha trajetória profissional e os principais contextos em que apliquei
+				Analytics serão apresentados nesta seção.
+			</p>
+		</section>
+
+		<section id="contato" aria-labelledby="titulo-contato">
+			<h2 id="titulo-contato">Contato</h2>
+
+			<a
+				href="https://www.linkedin.com/in/klemersongomes/"
+				target="_blank"
+				rel="noreferrer"
+			>
+				Entre em contato pelo LinkedIn
+			</a>
+		</section>
+	</main>
+
+	<footer>
+		<p>© {currentYear} Klemerson Gomes.</p>
+	</footer>
+</BaseLayout>

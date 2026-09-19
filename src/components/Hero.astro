@@ -1,0 +1,299 @@
+<section class="hero" id="inicio" aria-labelledby="titulo-principal">
+	<div class="container hero-grid">
+		<div class="hero-content">
+			<p class="eyebrow">
+				<span aria-hidden="true"></span>
+				Dados & Analytics
+			</p>
+
+			<h1 id="titulo-principal">
+				Transformo perguntas de negócio em análises que apoiam
+				<strong>decisões melhores.</strong>
+			</h1>
+
+			<p class="hero-description">
+				Sou Klemerson Gomes, profissional de Dados e Analytics com experiência
+				em Business Intelligence, construção de indicadores e comunicação com
+				stakeholders.
+			</p>
+
+			<div class="hero-actions">
+				<a class="button button-primary" href="#sobre">
+					Conheça minha trajetória
+				</a>
+
+				<a
+					class="button button-secondary"
+					href="https://www.linkedin.com/in/klemersongomes/"
+					target="_blank"
+					rel="noreferrer"
+				>
+					LinkedIn
+					<span aria-hidden="true">↗</span>
+				</a>
+			</div>
+		</div>
+
+		<aside class="process-card" aria-label="Processo de trabalho analítico">
+			<p class="process-label">Meu processo analítico</p>
+
+			<ol>
+				<li>
+					<span>01</span>
+					<div>
+						<strong>Entender a pergunta</strong>
+						<p>Contexto, objetivo e decisão que precisa ser tomada.</p>
+					</div>
+				</li>
+
+				<li>
+					<span>02</span>
+					<div>
+						<strong>Analisar com contexto</strong>
+						<p>Dados, indicadores e relações relevantes para o problema.</p>
+					</div>
+				</li>
+
+				<li>
+					<span>03</span>
+					<div>
+						<strong>Comunicar a recomendação</strong>
+						<p>Conclusões claras, limitações e próximos passos.</p>
+					</div>
+				</li>
+			</ol>
+		</aside>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		overflow: hidden;
+		padding-block: 7rem;
+		border-bottom: 1px solid var(--color-border);
+		background:
+			radial-gradient(circle at 15% 20%, rgb(37 99 235 / 10%), transparent 28rem),
+			var(--color-background);
+	}
+
+	.hero::before {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgb(23 32 51 / 4%) 1px, transparent 1px),
+			linear-gradient(90deg, rgb(23 32 51 / 4%) 1px, transparent 1px);
+		background-size: 40px 40px;
+		content: "";
+		mask-image: linear-gradient(to bottom, black, transparent 85%);
+		pointer-events: none;
+	}
+
+	.hero-grid {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+		align-items: center;
+		gap: clamp(3rem, 7vw, 7rem);
+	}
+
+	.hero-content {
+		max-width: 720px;
+	}
+
+	.eyebrow {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin: 0 0 1.25rem;
+		color: var(--color-primary);
+		font-size: 0.85rem;
+		font-weight: 750;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.eyebrow span {
+		width: 2rem;
+		height: 2px;
+		background: var(--color-primary);
+	}
+
+	h1 {
+		max-width: 780px;
+		margin: 0;
+		font-size: clamp(2.7rem, 6vw, 5.25rem);
+		line-height: 1.02;
+		letter-spacing: -0.055em;
+	}
+
+	h1 strong {
+		color: var(--color-primary);
+		font-weight: inherit;
+	}
+
+	.hero-description {
+		max-width: 650px;
+		margin: 2rem 0 0;
+		color: var(--color-text-muted);
+		font-size: clamp(1.05rem, 2vw, 1.2rem);
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-top: 2.25rem;
+	}
+
+	.button {
+		display: inline-flex;
+		min-height: 48px;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.2rem;
+		border: 1px solid transparent;
+		border-radius: 0.65rem;
+		font-size: 0.95rem;
+		font-weight: 700;
+		transition:
+			transform 160ms ease,
+			background-color 160ms ease,
+			border-color 160ms ease;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button:focus-visible {
+		outline: 3px solid rgb(37 99 235 / 25%);
+		outline-offset: 3px;
+	}
+
+	.button-primary {
+		background: var(--color-primary);
+		color: white;
+	}
+
+	.button-primary:hover {
+		background: #1d4ed8;
+	}
+
+	.button-secondary {
+		border-color: var(--color-border);
+		background: var(--color-surface);
+	}
+
+	.button-secondary:hover {
+		border-color: #aebbd0;
+	}
+
+	.process-card {
+		padding: 1.75rem;
+		border: 1px solid var(--color-border);
+		border-radius: 1rem;
+		background: rgb(255 255 255 / 84%);
+		box-shadow: 0 24px 70px rgb(23 32 51 / 10%);
+		backdrop-filter: blur(12px);
+	}
+
+	.process-label {
+		margin: 0 0 1.5rem;
+		color: var(--color-text-muted);
+		font-size: 0.8rem;
+		font-weight: 750;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	ol {
+		display: grid;
+		gap: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+		display: grid;
+		grid-template-columns: 2.4rem 1fr;
+		gap: 1rem;
+		padding-bottom: 1.5rem;
+	}
+
+	li:last-child {
+		padding-bottom: 0;
+	}
+
+	li:not(:last-child)::after {
+		position: absolute;
+		top: 2rem;
+		bottom: 0.25rem;
+		left: 1.15rem;
+		width: 1px;
+		background: var(--color-border);
+		content: "";
+	}
+
+	li > span {
+		display: grid;
+		width: 2.4rem;
+		height: 2.4rem;
+		place-items: center;
+		border: 1px solid rgb(37 99 235 / 25%);
+		border-radius: 50%;
+		background: #eff6ff;
+		color: var(--color-primary);
+		font-size: 0.75rem;
+		font-weight: 800;
+	}
+
+	li strong {
+		display: block;
+		margin-bottom: 0.2rem;
+		font-size: 0.98rem;
+	}
+
+	li p {
+		margin: 0;
+		color: var(--color-text-muted);
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 850px) {
+		.hero {
+			padding-block: 5rem;
+		}
+
+		.hero-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.process-card {
+			max-width: 600px;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.hero {
+			padding-block: 3.75rem;
+		}
+
+		h1 {
+			font-size: clamp(2.4rem, 13vw, 3.5rem);
+		}
+
+		.hero-actions {
+			align-items: stretch;
+			flex-direction: column;
+		}
+
+		.button {
+			width: 100%;
+		}
+	}
+</style>

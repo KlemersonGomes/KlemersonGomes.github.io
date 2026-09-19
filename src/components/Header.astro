@@ -1,0 +1,76 @@
+<header class="site-header">
+	<div class="container header-content">
+		<a class="brand" href="/" aria-label="Página inicial">
+			Klemerson <span>Gomes</span>
+		</a>
+
+		<nav aria-label="Navegação principal">
+			<a href="/#sobre">Sobre</a>
+			<a href="/#experiencia">Experiência</a>
+			<a href="/#contato">Contato</a>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		border-bottom: 1px solid var(--color-border);
+		background: rgb(247 249 252 / 90%);
+		backdrop-filter: blur(12px);
+	}
+
+	.header-content {
+		display: flex;
+		min-height: 72px;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	.brand {
+		font-size: 1.05rem;
+		font-weight: 750;
+		letter-spacing: -0.02em;
+	}
+
+	.brand span {
+		color: var(--color-primary);
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	nav a {
+		color: var(--color-text-muted);
+		font-size: 0.95rem;
+		font-weight: 600;
+		transition: color 160ms ease;
+	}
+
+	nav a:hover,
+	nav a:focus-visible {
+		color: var(--color-primary);
+	}
+
+	@media (max-width: 600px) {
+		.header-content {
+			min-height: auto;
+			padding-block: 1rem;
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		nav {
+			width: 100%;
+			justify-content: space-between;
+			gap: 0.75rem;
+		}
+	}
+</style>
