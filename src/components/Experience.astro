@@ -1,0 +1,324 @@
+---
+const experiences = [
+	{
+		company: "Algar Telecom",
+		linkedin: "https://www.linkedin.com/company/algar-oficial/posts/?feedView=all",
+		logo: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Algar_Telecom_logo.svg",
+		logoFallback: "Algar",
+		role: "Analista de Dados",
+		period: "Out. 2024 – atual",
+		context:
+			"Desenvolvo soluções analíticas para Produtos, Financeiro, Portabilidade, Qualidade e gestão executiva, combinando dados, indicadores e visualizações conforme a necessidade de cada área.",
+		contributions: [
+			"Desenvolvi mais de 10 dashboards para diferentes áreas, incluindo painéis operacionais, financeiros, de produto e executivos.",
+			"Migrei mais de 15 dashboards de GAIO para Power BI e Snowflake, revisando dados, indicadores e visualizações durante a transição.",
+			"Atuo com Snowflake na construção de soluções analíticas e visões semânticas, além de aplicar recursos de IA a atividades de Analytics.",
+		],
+		technologies: [
+			"SQL", "Python", "Snowflake", "Power BI", "Tableau", "Streamlit", "GAIO", "React",
+		],
+	},
+	{
+		company: "Agência F2F",
+		linkedin: "https://www.linkedin.com/company/f2f/",
+		logo: "https://www.google.com/s2/favicons?domain=agenciaf2f.com&sz=128",
+		logoFallback: "F2F",
+		role: "Analista de BI",
+		period: "Abr. 2023 – out. 2024",
+		context:
+			"Análise de desempenho de canais digitais para diferentes clientes, com relatórios periódicos e dashboards.",
+		contributions: [
+			"Automatização de etapas da análise e produção de relatórios, liberando tempo da equipe para atividades estratégicas.",
+			"Criação de relatórios de investimento em mídia e tempo de equipe para ampliar a visibilidade sobre o orçamento.",
+		],
+		technologies: ["Looker", "Power BI", "Google Sheets", "SQL", "Python"],
+	},
+	{
+		company: "A3Data",
+		linkedin: "https://www.linkedin.com/company/a3data-consultoria/",
+		logo: "https://www.google.com/s2/favicons?domain=a3data.com.br&sz=128",
+		logoFallback: "A3",
+		role: "Analista de Dados",
+		period: "Set. 2021 – mar. 2023",
+		context:
+			"Projetos de análise e BI para equipes de logística, finanças e marketing.",
+		contributions: [
+			"Desenvolvimento de painéis para monitoramento operacional e acompanhamento de contas a pagar.",
+			"Análise exploratória e criação de dashboard para compreender o perfil de clientes e o desempenho de campanhas.",
+		],
+		technologies: ["SQL", "Power BI", "Python", "R", "AWS"],
+	},
+	{
+		company: "Indra Company",
+		linkedin: "https://www.linkedin.com/company/indra/",
+		logo: "https://www.google.com/s2/favicons?domain=indragroup.com&sz=128",
+		logoFallback: "Indra",
+		role: "Analista de Dados",
+		period: "Fev. 2020 – set. 2021",
+		context:
+			"Migração e evolução de dashboards no projeto Bradesco LGPD.",
+		contributions: [
+			"Reestruturação e redesenho de sete dashboards para melhorar a leitura dos indicadores.",
+			"Identificação de uma inconsistência em dados protocolares durante a análise exploratória, permitindo sua avaliação e correção.",
+		],
+		technologies: ["SQL", "Power BI", "Excel", "Azure"],
+	},
+];
+---
+
+<section class="experience" id="experiencia" aria-labelledby="experience-title">
+	<div class="container">
+		<div class="section-heading">
+			<p class="section-label">Trajetória</p>
+			<h2 id="experience-title">Experiência profissional</h2>
+			<p>
+				Soluções analíticas desenvolvidas em diferentes contextos de negócio,
+				da definição dos indicadores à comunicação dos resultados.
+			</p>
+		</div>
+
+		<div class="timeline">
+			{
+				experiences.map((experience) => (
+					<article class="experience-card">
+						<div class="role-heading">
+							<div class="company-heading">
+								<a
+									class="company-link"
+									href={experience.linkedin}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={`Ver ${experience.company} no LinkedIn (abre em nova aba)`}
+								>
+									<span class="company-logo">
+										<img src={experience.logo} alt="" width="40" height="40" loading="lazy" />
+										<span class="logo-fallback" aria-hidden="true">{experience.logoFallback}</span>
+									</span>
+									<div class="company-copy">
+										<h3>{experience.role}</h3>
+										<span class="company">{experience.company}</span>
+									</div>
+								</a>
+							</div>
+							<p class="period">{experience.period}</p>
+						</div>
+
+						<p class="context">{experience.context}</p>
+
+						<ul class="contributions">
+							{experience.contributions.map((item) => <li>{item}</li>)}
+						</ul>
+
+						<ul class="technologies" aria-label="Tecnologias utilizadas">
+							{experience.technologies.map((item) => <li>{item}</li>)}
+						</ul>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script>
+	document.querySelectorAll<HTMLImageElement>(".company-logo img").forEach((image) => {
+		const showFallback = () => image.classList.add("is-unavailable");
+		image.addEventListener("error", showFallback);
+		if (image.complete && image.naturalWidth === 0) showFallback();
+	});
+</script>
+
+<style>
+	.experience {
+		padding-block: 6.5rem;
+		scroll-margin-top: 72px;
+	}
+
+	.section-heading {
+		max-width: 740px;
+		margin-bottom: 3rem;
+	}
+
+	.section-label {
+		margin: 0 0 1rem;
+		color: var(--color-primary);
+		font-size: 0.8rem;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: clamp(2.25rem, 4vw, 3.5rem);
+		line-height: 1.1;
+		letter-spacing: -0.045em;
+	}
+
+	.section-heading > p:last-child {
+		color: var(--color-text-muted);
+		font-size: 1.05rem;
+	}
+
+	.timeline {
+		display: grid;
+		gap: 1.25rem;
+		padding-left: 1.5rem;
+		border-left: 2px solid var(--color-border);
+	}
+
+	.experience-card {
+		position: relative;
+		padding: 2rem;
+		border: 1px solid var(--color-border);
+		border-radius: 1rem;
+		background: var(--color-surface);
+	}
+
+	.experience-card::before {
+		position: absolute;
+		top: 2.4rem;
+		left: calc(-1.5rem - 7px);
+		width: 12px;
+		height: 12px;
+		border: 3px solid var(--color-background);
+		border-radius: 50%;
+		background: var(--color-primary);
+		content: "";
+	}
+
+	.role-heading {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.company-heading {
+		min-width: 0;
+	}
+
+	.company-link {
+		display: flex;
+		align-items: center;
+		gap: 0.85rem;
+		min-width: 0;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.company-copy {
+		display: grid;
+		gap: 0.2rem;
+	}
+
+	.company-logo {
+		position: relative;
+		display: grid;
+		flex: 0 0 52px;
+		place-items: center;
+		width: 52px;
+		height: 52px;
+		border: 1px solid var(--color-border);
+		border-radius: 0.75rem;
+		background: #fff;
+	}
+
+	.company-link:hover .company-logo,
+	.company-link:focus-visible .company-logo {
+		border-color: var(--color-primary);
+	}
+
+	.company-link:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 3px;
+	}
+
+	.company-link:hover .company {
+		text-decoration: underline;
+	}
+
+	.company-logo img {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		background: #fff;
+		object-fit: contain;
+	}
+
+	.logo-fallback {
+		display: none;
+		color: #3b3455;
+		font-size: 0.7rem;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+	}
+
+	.company-logo img.is-unavailable {
+		display: none;
+	}
+
+	.company-logo img.is-unavailable + .logo-fallback {
+		display: block;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 1.35rem;
+		letter-spacing: -0.025em;
+	}
+
+	.company {
+		color: var(--color-primary);
+		font-weight: 700;
+	}
+
+	.period {
+		margin: 0;
+		color: var(--color-text-muted);
+		white-space: nowrap;
+	}
+
+	.context {
+		margin: 1.5rem 0 0;
+	}
+
+	.contributions {
+		display: grid;
+		gap: 0.6rem;
+		margin: 1rem 0 0;
+		padding-left: 1.25rem;
+		color: var(--color-text-muted);
+	}
+
+	.technologies {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin: 1.5rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.technologies li {
+		padding: 0.3rem 0.65rem;
+		border: 1px solid var(--color-border);
+		border-radius: 0.4rem;
+		background: var(--color-background);
+		font-size: 0.8rem;
+		font-weight: 600;
+	}
+
+	@media (max-width: 650px) {
+		.experience {
+			padding-block: 5rem;
+		}
+
+		.experience-card {
+			padding: 1.5rem;
+		}
+
+		.role-heading {
+			flex-direction: column;
+			gap: 0.4rem;
+		}
+	}
+</style>

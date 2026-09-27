@@ -1,0 +1,132 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="footer-identity">
+				<a class="footer-name" href="#inicio">Klemerson Gomes</a>
+				<p>Dados &amp; Analytics</p>
+			</div>
+
+			<nav class="footer-navigation" aria-label="Navegação do rodapé">
+				<a href="#inicio">Início</a>
+				<a href="#sobre">Sobre</a>
+				<a href="#experiencia">Experiência</a>
+				<a href="#contato">Contato</a>
+			</nav>
+
+			<a
+				class="footer-linkedin"
+				href="https://www.linkedin.com/in/klemersongomes/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				LinkedIn <span aria-hidden="true">↗</span>
+			</a>
+		</div>
+
+		<div class="footer-bottom">
+			<p>© {currentYear} · Desenvolvido por Klemerson Gomes com apoio de inteligência artificial.</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		padding-block: 3.5rem 2rem;
+		border-top: 1px solid var(--color-border);
+		background: var(--color-surface);
+	}
+
+	.footer-main {
+		display: grid;
+		grid-template-columns: minmax(220px, 1fr) auto auto;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	.footer-identity {
+		display: grid;
+		gap: 0.35rem;
+	}
+
+	.footer-name {
+		width: fit-content;
+		color: var(--color-text);
+		font-size: 1.1rem;
+		font-weight: 800;
+		text-decoration: none;
+	}
+
+	.footer-identity p {
+		margin: 0;
+		color: var(--color-text-muted);
+		font-size: 0.9rem;
+	}
+
+	.footer-navigation {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+	.footer-navigation a,
+	.footer-linkedin {
+		color: var(--color-text-muted);
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.footer-navigation a:hover,
+	.footer-linkedin:hover {
+		color: var(--color-primary);
+	}
+
+	.footer-navigation a:focus-visible,
+	.footer-linkedin:focus-visible,
+	.footer-name:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 4px;
+	}
+
+	.footer-linkedin {
+		white-space: nowrap;
+	}
+
+	.footer-bottom {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		margin-top: 2.5rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--color-border);
+	}
+
+	.footer-bottom p {
+		margin: 0;
+		color: var(--color-text-muted);
+		font-size: 0.8rem;
+		text-align: center;
+	}
+
+	@media (max-width: 750px) {
+		.footer-main {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.footer-navigation {
+			justify-content: flex-start;
+			gap: 1rem 1.5rem;
+		}
+
+		.footer-linkedin {
+			width: fit-content;
+		}
+
+	}
+</style>

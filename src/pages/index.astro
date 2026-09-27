@@ -1,6 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -11,35 +15,10 @@ const currentYear = new Date().getFullYear();
 >
 	<main>
 		<Hero />
-		<section id="sobre" aria-labelledby="titulo-sobre">
-			<h2 id="titulo-sobre">Sobre</h2>
-
-			<p>
-				Atuo transformando necessidades de negócio em análises, dashboards e
-				informações que ajudam pessoas e equipes a tomarem decisões melhores.
-			</p>
-		</section>
-
-		<section id="experiencia" aria-labelledby="titulo-experiencia">
-			<h2 id="titulo-experiencia">Experiência</h2>
-
-			<p>
-				Minha trajetória profissional e os principais contextos em que apliquei
-				Analytics serão apresentados nesta seção.
-			</p>
-		</section>
-
-		<section id="contato" aria-labelledby="titulo-contato">
-			<h2 id="titulo-contato">Contato</h2>
-
-			<a
-				href="https://www.linkedin.com/in/klemersongomes/"
-				target="_blank"
-				rel="noreferrer"
-			>
-				Entre em contato pelo LinkedIn
-			</a>
-		</section>
+		<About />
+		<Experience />
+		<Contact />
+		<Footer />
 	</main>
 
 	<footer>
