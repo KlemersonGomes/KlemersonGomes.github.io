@@ -15,8 +15,19 @@ const experiences = [
 			"Atuo com Snowflake na construção de soluções analíticas e visões semânticas, além de aplicar recursos de IA a atividades de Analytics.",
 		],
 		technologies: [
-			"SQL", "Python", "Snowflake", "Power BI", "Tableau", "Streamlit", "GAIO", "React",
+			"SQL",
+			"Python",
+			"Snowflake",
+			"Power BI",
+			"Tableau",
+			"Streamlit",
+			"GAIO",
+			"React",
 		],
+		details: {
+			challenges: [],
+			projects: [],
+		},
 	},
 	{
 		company: "Agência F2F",
@@ -32,6 +43,10 @@ const experiences = [
 			"Criação de relatórios de investimento em mídia e tempo de equipe para ampliar a visibilidade sobre o orçamento.",
 		],
 		technologies: ["Looker", "Power BI", "Google Sheets", "SQL", "Python"],
+		details: {
+			challenges: [],
+			projects: [],
+		},
 	},
 	{
 		company: "A3Data",
@@ -47,6 +62,10 @@ const experiences = [
 			"Análise exploratória e criação de dashboard para compreender o perfil de clientes e o desempenho de campanhas.",
 		],
 		technologies: ["SQL", "Power BI", "Python", "R", "AWS"],
+		details: {
+			challenges: [],
+			projects: [],
+		},
 	},
 	{
 		company: "Indra Company",
@@ -62,6 +81,28 @@ const experiences = [
 			"Identificação de uma inconsistência em dados protocolares durante a análise exploratória, permitindo sua avaliação e correção.",
 		],
 		technologies: ["SQL", "Power BI", "Excel", "Azure"],
+		details: {
+			challenges: [
+				"Assumi, na etapa inicial do projeto de LGPD do Bradesco, a atuação como único analista de dados por cerca de cinco meses, após uma transição interna de desenvolvimento de software para Analytics.",
+				"Recebi sete dashboards originalmente construídos pela equipe de engenharia que precisavam evoluir em organização visual, clareza dos indicadores e storytelling para facilitar a interpretação pelos stakeholders.",
+				"Durante a análise exploratória e validação da qualidade dos dados, identifiquei inconsistências no registro de protocolos e conduzi a investigação junto ao time de engenharia até localizar a origem do problema no front-end da aplicação.",
+			],
+			projects: [
+				{
+					title: "Evolução de dashboards de LGPD",
+					description:
+						"Migração e redesenho de sete dashboards, com foco em melhorar a hierarquia das informações, a leitura dos indicadores e a comunicação visual dos resultados.",
+				},
+				{
+					title: "Monitoramento de protocolos",
+					description:
+						"Construção de dois novos dashboards para acompanhamento do status dos protocolos, ampliando a visibilidade sobre o andamento das solicitações e apoiando o monitoramento operacional do projeto.",
+				},
+			],
+			impact: [
+				"A investigação das inconsistências nos protocolos levou à identificação e correção de uma falha com potencial impacto sobre o tratamento de dados sensíveis. Segundo feedback direto do cliente, esse resultado contribuiu para a decisão de prorrogar o contrato com a Indra por mais seis meses.",
+			],
+		},
 	},
 ];
 ---
@@ -70,7 +111,9 @@ const experiences = [
 	<div class="container">
 		<div class="section-heading">
 			<p class="section-label">Trajetória</p>
+
 			<h2 id="experience-title">Experiência profissional</h2>
+
 			<p>
 				Soluções analíticas desenvolvidas em diferentes contextos de negócio,
 				da definição dos indicadores à comunicação dos resultados.
@@ -91,15 +134,26 @@ const experiences = [
 									aria-label={`Ver ${experience.company} no LinkedIn (abre em nova aba)`}
 								>
 									<span class="company-logo">
-										<img src={experience.logo} alt="" width="40" height="40" loading="lazy" />
-										<span class="logo-fallback" aria-hidden="true">{experience.logoFallback}</span>
+										<img
+											src={experience.logo}
+											alt=""
+											width="40"
+											height="40"
+											loading="lazy"
+										/>
+
+										<span class="logo-fallback" aria-hidden="true">
+											{experience.logoFallback}
+										</span>
 									</span>
+
 									<div class="company-copy">
 										<h3>{experience.role}</h3>
 										<span class="company">{experience.company}</span>
 									</div>
 								</a>
 							</div>
+
 							<p class="period">{experience.period}</p>
 						</div>
 
@@ -112,6 +166,71 @@ const experiences = [
 						<ul class="technologies" aria-label="Tecnologias utilizadas">
 							{experience.technologies.map((item) => <li>{item}</li>)}
 						</ul>
+
+						<details class="experience-details">
+							<summary class="details-toggle">
+								<span class="toggle-icon" aria-hidden="true"></span>
+								<span>Projetos e desafios</span>
+							</summary>
+
+							<div class="details-content">
+								{
+									experience.details.challenges.length > 0 && (
+										<div class="details-section">
+											<p class="details-label">Principais desafios</p>
+
+											<ul>
+												{experience.details.challenges.map((item) => (
+													<li>{item}</li>
+												))}
+											</ul>
+										</div>
+									)
+								}
+
+								{
+									experience.details.projects.length > 0 && (
+										<div class="details-section">
+											<p class="details-label">Projetos relevantes</p>
+
+											<div class="projects-list">
+												{experience.details.projects.map((project) => (
+													<div class="project-item">
+														<h4>{project.title}</h4>
+														<p>{project.description}</p>
+													</div>
+												))}
+											</div>
+										</div>
+									)
+								}
+
+								{
+									experience.details.impact?.length > 0 && (
+										<div class="details-section">
+											<p class="details-label">Impacto</p>
+
+											<ul>
+												{experience.details.impact.map((item) => (
+													<li>{item}</li>
+												))}
+											</ul>
+										</div>
+									)
+								}
+
+								{
+									experience.details.challenges.length === 0 &&
+										experience.details.projects.length === 0 &&
+										!experience.details.impact?.length && (
+											<p class="details-empty">
+												Os detalhes desta experiência serão adicionados nesta
+												área.
+											</p>
+										)
+								}
+							</div>
+						</details>
 					</article>
 				))
 			}
@@ -120,11 +239,15 @@ const experiences = [
 </section>
 
 <script>
-	document.querySelectorAll<HTMLImageElement>(".company-logo img").forEach((image) => {
-		const showFallback = () => image.classList.add("is-unavailable");
-		image.addEventListener("error", showFallback);
-		if (image.complete && image.naturalWidth === 0) showFallback();
-	});
+	document
+		.querySelectorAll<HTMLImageElement>(".company-logo img")
+		.forEach((image) => {
+			const showFallback = () => image.classList.add("is-unavailable");
+
+			image.addEventListener("error", showFallback);
+
+			if (image.complete && image.naturalWidth === 0) showFallback();
+		});
 </script>
 
 <style>
@@ -307,6 +430,124 @@ const experiences = [
 		font-weight: 600;
 	}
 
+	.experience-details {
+		margin-top: 1.75rem;
+		border-top: 1px solid var(--color-border);
+	}
+
+	.details-toggle {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding-top: 1.25rem;
+		color: var(--color-text);
+		font-weight: 700;
+		cursor: pointer;
+		list-style: none;
+		user-select: none;
+	}
+
+	.details-toggle::-webkit-details-marker {
+		display: none;
+	}
+
+	.details-toggle:hover {
+		color: var(--color-primary);
+	}
+
+	.details-toggle:focus-visible {
+		border-radius: 0.35rem;
+		outline: 2px solid var(--color-primary);
+		outline-offset: 4px;
+	}
+
+	.toggle-icon {
+		position: relative;
+		flex: 0 0 24px;
+		width: 24px;
+		height: 24px;
+		border: 1px solid var(--color-border);
+		border-radius: 50%;
+		background: var(--color-background);
+	}
+
+	.toggle-icon::before,
+	.toggle-icon::after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 10px;
+		height: 2px;
+		border-radius: 999px;
+		background: var(--color-primary);
+		content: "";
+		transform: translate(-50%, -50%);
+	}
+
+	.toggle-icon::after {
+		transform: translate(-50%, -50%) rotate(90deg);
+		transition: opacity 0.2s ease;
+	}
+
+	.experience-details[open] .toggle-icon::after {
+		opacity: 0;
+	}
+
+	.details-content {
+		margin-top: 1.25rem;
+		padding: 1.5rem;
+		border: 1px solid var(--color-border);
+		border-radius: 0.75rem;
+		background: var(--color-background);
+	}
+
+	.details-section + .details-section {
+		margin-top: 1.75rem;
+		padding-top: 1.75rem;
+		border-top: 1px solid var(--color-border);
+	}
+
+	.details-label {
+		margin: 0 0 0.85rem;
+		color: var(--color-primary);
+		font-size: 0.78rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.details-section ul {
+		display: grid;
+		gap: 0.65rem;
+		margin: 0;
+		padding-left: 1.25rem;
+		color: var(--color-text-muted);
+	}
+
+	.projects-list {
+		display: grid;
+		gap: 1.25rem;
+	}
+
+	.project-item h4 {
+		margin: 0;
+		color: var(--color-text);
+		font-size: 1rem;
+		line-height: 1.4;
+	}
+
+	.project-item p {
+		margin: 0.4rem 0 0;
+		color: var(--color-text-muted);
+		line-height: 1.6;
+	}
+
+	.details-empty {
+		margin: 0;
+		color: var(--color-text-muted);
+		font-size: 0.95rem;
+	}
+
 	@media (max-width: 650px) {
 		.experience {
 			padding-block: 5rem;
@@ -319,6 +560,10 @@ const experiences = [
 		.role-heading {
 			flex-direction: column;
 			gap: 0.4rem;
+		}
+
+		.details-content {
+			padding: 1.25rem;
 		}
 	}
 </style>
