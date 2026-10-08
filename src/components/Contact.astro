@@ -1,3 +1,14 @@
+---
+import { getTranslator, type Locale } from "../i18n/locale";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslator(locale);
+---
+
 <section
 	class="portfolio-contact"
 	id="contato"
@@ -6,15 +17,14 @@
 	<div class="container">
 		<div class="portfolio-contact-card">
 			<div class="portfolio-contact-content">
-				<p class="portfolio-contact-label">Contato</p>
+				<p class="portfolio-contact-label">{t("Contato", "Contact")}</p>
 
 				<h2 id="portfolio-contact-title">
-					Vamos conversar?
+					{t("Vamos conversar?", "Let's talk")}
 				</h2>
 
 				<p class="portfolio-contact-description">
-					Se minha experiência em Dados e Analytics fizer sentido para a sua
-					equipe, entre em contato, ficarei feliz em conhecer a oportunidade.
+					{t("Se minha experiência em Dados e Analytics fizer sentido para a sua equipe, entre em contato, ficarei feliz em conhecer a oportunidade.", "If my experience in Data and Analytics is a good fit for your team, get in touch. I'd be happy to learn more about the opportunity.")}
 				</p>
 			</div>
 
@@ -25,20 +35,20 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Conversar no LinkedIn
+					{t("Conversar no LinkedIn", "Connect on LinkedIn")}
 					<span aria-hidden="true">↗</span>
 				</a>
 
 				<div class="portfolio-contact-details">
 					<div class="portfolio-contact-item">
-						<span class="portfolio-contact-item-label">E-mail</span>
+						<span class="portfolio-contact-item-label">{t("E-mail", "Email")}</span>
 						<span class="portfolio-contact-item-value">
 							klemersonsg@gmail.com
 						</span>
 					</div>
 
 					<div class="portfolio-contact-item">
-						<span class="portfolio-contact-item-label">Telefone</span>
+						<span class="portfolio-contact-item-label">{t("Telefone", "Phone")}</span>
 						<span class="portfolio-contact-item-value">
 							(83) 9 9832-3431
 						</span>

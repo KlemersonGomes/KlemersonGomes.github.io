@@ -1,17 +1,53 @@
-<header class="site-header">
-	<div class="container header-content">
-		<a class="brand" href="/" aria-label="Página inicial">
-			Klemerson <span>Gomes</span>
-		</a>
+---
+import { getTranslator, localeHome, type Locale } from "../i18n/locale";
 
-		<nav aria-label="Navegação principal">
-			<a href="/#sobre">Sobre</a>
-			<a href="#qualificacoes">Qualificações</a>
-			<a href="/#experiencia">Experiência</a>
-			<a href="/#contato">Contato</a>
-		</nav>
-	</div>
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslator(locale);
+---
+
+<header class="site-header">
+  <div class="container header-content">
+    <a class="brand" href={localeHome(locale)} aria-label={t("Página inicial", "Home page")}>
+      Klemerson <span>Gomes</span>
+    </a>
+
+    <nav aria-label={t("Navegação principal", "Main navigation")}>
+      <a href="#sobre">{t("Sobre", "About")}</a>
+      <a href="#qualificacoes">{t("Qualificações", "Qualifications")}</a>
+      <a href="#experiencia">{t("Experiência", "Experience")}</a>
+      <a href="#contato">{t("Contato", "Contact")}</a>
+    </nav>
+
+    <div class="language-switch" role="group" aria-label={t("Idioma", "Language")}>
+      <a href="/" data-language-link="/" lang="en" hreflang="en" title="English"
+        aria-label={t("Ler em inglês", "Read in English")}
+        aria-current={locale === "en" ? "page" : undefined}>
+        <span class="language-name">English</span><span class="language-code" aria-hidden="true">EN</span>
+      </a>
+      <a href="/pt/" data-language-link="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português"
+        aria-label={t("Ler em português", "Read in Portuguese")}
+        aria-current={locale === "pt" ? "page" : undefined}>
+        <span class="language-name">Português</span><span class="language-code" aria-hidden="true">PT</span>
+      </a>
+    </div>
+  </div>
 </header>
+
+<script>
+  function syncLanguageLinks() {
+    document.querySelectorAll<HTMLAnchorElement>("[data-language-link]").forEach((link) => {
+      const base = link.dataset.languageLink;
+      if (base) link.href = base + window.location.hash;
+    });
+  }
+
+  syncLanguageLinks();
+  window.addEventListener("hashchange", syncLanguageLinks);
+</script>
 
 <style>
 	.site-header {
@@ -24,10 +60,10 @@
 	}
 
 	.header-content {
-		display: flex;
+		display: grid;
+		grid-template-columns: auto 1fr auto;
 		min-height: 72px;
 		align-items: center;
-		justify-content: space-between;
 		gap: 2rem;
 	}
 
@@ -42,6 +78,7 @@
 	}
 
 	nav {
+		justify-self: end;
 		display: flex;
 		align-items: center;
 		gap: 1.5rem;
@@ -59,19 +96,63 @@
 		color: var(--color-primary);
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 850px) {
 		.header-content {
 			min-height: auto;
 			padding-block: 1rem;
-			align-items: flex-start;
-			flex-direction: column;
+			grid-template-columns: 1fr auto;
 			gap: 0.75rem;
 		}
 
 		nav {
+			grid-column: 1 / -1;
+			grid-row: 2;
+			flex-wrap: wrap;
 			width: 100%;
 			justify-content: space-between;
 			gap: 0.75rem;
 		}
 	}
+
+  .language-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.6rem;
+    white-space: nowrap;
+  }
+
+  .language-switch a {
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.4rem;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .language-switch a[aria-current="page"] {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  .language-switch a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .language-code {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .language-name {
+      display: none;
+    }
+
+    .language-code {
+      display: inline;
+    }
+  }
 </style>

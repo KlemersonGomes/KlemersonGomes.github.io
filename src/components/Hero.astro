@@ -1,25 +1,34 @@
+---
+import { getTranslator, type Locale } from "../i18n/locale";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslator(locale);
+---
+
 <section class="hero" id="inicio" aria-labelledby="titulo-principal">
 	<div class="container hero-grid">
 		<div class="hero-content">
 			<p class="eyebrow">
 				<span aria-hidden="true"></span>
-				Dados & Analytics
+				{t("Dados & Analytics", "Data & Analytics")}
 			</p>
 
 			<h1 id="titulo-principal">
-				Transformo perguntas de negócio em análises que apoiam{" "}
-				<strong>decisões melhores.</strong>
+				{t("Transformo perguntas de negócio em análises que apoiam", "I turn business questions into insights that support")}{" "}
+				<strong>{t("decisões melhores.", "better decisions.")}</strong>
 			</h1>
 
 			<p class="hero-description">
-				Sou Klemerson Gomes, profissional de Dados e Analytics com experiência
-				em Business Intelligence, construção de indicadores e comunicação com
-				stakeholders.
+				{t("Sou Klemerson Gomes, profissional de Dados e Analytics com quase sete anos de experiência profissional. Minha atuação combina Business Intelligence, construção de indicadores e comunicação com stakeholders.", "I'm Klemerson Gomes, a Data and Analytics professional with nearly seven years of professional experience. My work combines Business Intelligence, KPI development, and stakeholder communication.")}
 			</p>
 
 			<div class="hero-actions">
-				<a class="button button-primary" href="#sobre">
-					Conheça minha trajetória
+				<a class="button button-primary" href="#experiencia">
+					{t("Ver experiência profissional", "View professional experience")}
 				</a>
 
 				<a
@@ -34,31 +43,31 @@
 			</div>
 		</div>
 
-		<aside class="process-card" aria-label="Processo de trabalho analítico">
-			<p class="process-label">Meu processo analítico</p>
+		<aside class="process-card" aria-label={t("Processo de trabalho analítico", "Analytical workflow")}>
+			<p class="process-label">{t("Meu processo analítico", "My analytical process")}</p>
 
 			<ol>
 				<li>
 					<span>01</span>
 					<div>
-						<strong>Entender a pergunta</strong>
-						<p>Contexto, objetivo e decisão que precisa ser tomada.</p>
+						<strong>{t("Entender a pergunta", "Understand the question")}</strong>
+						<p>{t("Contexto, objetivo e decisão que precisa ser tomada.", "Context, objective, and the decision to be made.")}</p>
 					</div>
 				</li>
 
 				<li>
 					<span>02</span>
 					<div>
-						<strong>Analisar com contexto</strong>
-						<p>Dados, indicadores e relações relevantes para o problema.</p>
+						<strong>{t("Analisar com contexto", "Analyze in context")}</strong>
+						<p>{t("Dados, indicadores e relações relevantes para o problema.", "Data, metrics, and relationships relevant to the problem.")}</p>
 					</div>
 				</li>
 
 				<li>
 					<span>03</span>
 					<div>
-						<strong>Comunicar a recomendação</strong>
-						<p>Conclusões claras, limitações e próximos passos.</p>
+						<strong>{t("Comunicar a recomendação", "Communicate the recommendation")}</strong>
+						<p>{t("Conclusões claras, limitações e próximos passos.", "Clear conclusions, limitations, and next steps.")}</p>
 					</div>
 				</li>
 			</ol>
@@ -284,7 +293,7 @@
 		}
 
 		h1 {
-			font-size: clamp(2.4rem, 13vw, 3.5rem);
+			font-size: clamp(2rem, 10vw, 2.75rem);
 		}
 
 		.hero-actions {

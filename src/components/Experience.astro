@@ -1,224 +1,26 @@
 ---
-const experiences = [
-	{
-		company: "Algar Telecom",
-		linkedin: "https://www.linkedin.com/company/algar-oficial/posts/?feedView=all",
-		logo: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Algar_Telecom_logo.svg",
-		logoFallback: "Algar",
-		role: "Analista de Dados",
-		period: "Out. 2024 – atual",
-		context:
-			"Desenvolvimento e modernização de soluções analíticas para diferentes áreas da empresa, combinando Power BI, Snowflake e recursos de IA.",
-		contributions: [
-			"Migração de mais de 10 dashboards de GAIO para Power BI, revisando estruturas, indicadores e consultas durante a transição.",
-			"Desenvolvimento de dashboards do zero para áreas como Vendas, Financeiro, Portabilidade, Marketing e Produtos, em parceria direta com os clientes internos.",
-			"Criação de views e semantic views no Snowflake, além da otimização de consultas anteriormente executadas diretamente nos dashboards.",
-		],
-		technologies: [
-			"SQL",
-			"Python",
-			"Snowflake",
-			"Power BI",
-			"Tableau",
-			"Streamlit",
-			"GAIO",
-			"React",
-		],
-		details: {
-			keyChallenges: [
-				"Adaptação a um novo ecossistema tecnológico.",
-				"Atendimento simultâneo a diferentes áreas.",
-				"Migração de dashboards com pouca documentação.",
-				"Entrega de dashboards críticos e urgentes.",
-			],
-			challenges: [
-				"Assumi a migração de dashboards que não haviam sido construídos por mim, o que exigiu compreender estruturas existentes, regras de negócio e indicadores antes de reproduzi-los e aprimorá-los no novo ambiente.",
-				"Atendi simultaneamente áreas como Vendas, Financeiro, Portabilidade, Marketing e Produtos, conciliando diferentes necessidades, públicos e níveis de maturidade analítica.",
-				"Parte das áreas não possuía acompanhamento estruturado ou dependia de processos manuais em planilhas e apresentações, exigindo o levantamento dos requisitos e a construção das soluções analíticas desde o início.",
-			],
-			projects: [
-				{
-					title: "Migração de GAIO para Power BI",
-					description:
-						"Migração de mais de 10 dashboards de GAIO para Power BI, preservando as regras de negócio e revisando indicadores, consultas e visualizações durante a transição.",
-				},
-				{
-					title: "Dashboards multidisciplinares",
-					description:
-						"Idealização e construção de dashboards em parceria com clientes internos de diferentes áreas, transformando necessidades de negócio em indicadores e visualizações para acompanhamento recorrente.",
-				},
-				{
-					title: "Evolução da camada analítica no Snowflake",
-					description:
-						"Criação de views e semantic views, além da transferência e otimização de consultas anteriormente processadas diretamente nos dashboards. A atuação também envolveu o uso de recursos de IA em conjunto com o Snowflake para evoluir a geração e o consumo das informações.",
-				},
-			],
-			impact: [
-				"A criação dos dashboards estruturou acompanhamentos que antes não existiam ou dependiam de planilhas e apresentações atualizadas manualmente, reduzindo intervenções humanas e ampliando a disponibilidade das informações.",
-				"A centralização das consultas e regras analíticas no Snowflake, junto à criação de views semânticas, contribuiu para soluções mais organizadas, reutilizáveis e alinhadas à evolução da maturidade analítica das áreas atendidas.",
-			],
-		},
-	},
-	{
-		company: "Agência F2F",
-		linkedin: "https://www.linkedin.com/company/f2f/",
-		logo: "https://www.google.com/s2/favicons?domain=agenciaf2f.com&sz=128",
-		logoFallback: "F2F",
-		role: "Analista de BI",
-		period: "Abr. 2023 – out. 2024",
-		context:
-			"Atuação em Business Intelligence e Social Media Analytics para grandes marcas, com foco em desempenho digital, inteligência de mercado e otimização de mídia.",
-		contributions: [
-			"Produção e apresentação de relatórios mensais com indicadores, insights e recomendações para evolução do desempenho dos clientes nas redes sociais.",
-			"Desenvolvimento de dashboards para acompanhamento de resultados digitais, mídia paga e alocação de horas das equipes.",
-		],
-		technologies: ["Looker", "Power BI", "Google Sheets", "SQL", "Python"],
-		details: {
-			keyChallenges: [
-				"Gestão simultânea de múltiplos clientes.",
-				"Análise de dados de mídias sociais orgânicas.",
-				"Adaptação a novas ferramentas e plataformas digitais.",
-				"Automação de processos executados manualmente.",
-				"Criação de dashboards sem escopo previamente definido.",
-			],
-			challenges: [
-				"Atendi simultaneamente diferentes clientes, incluindo grandes marcas como Globo, TCL e Braskem, adaptando análises, indicadores e recomendações aos objetivos e ao contexto de cada negócio.",
-				"Transformei dados de desempenho das redes sociais em narrativas claras para os clientes, combinando resultados quantitativos, insights, oportunidades de melhoria e planos de ação para os meses seguintes.",
-				"Conciliei dados de diferentes canais e fontes para acompanhar resultados orgânicos, mídia paga, movimentos da concorrência e utilização das horas das equipes internas.",
-			],
-			projects: [
-				{
-					title: "Relatórios de desempenho digital",
-					description:
-						"Produção mensal de relatórios sobre o desempenho das páginas dos clientes nas redes sociais, reunindo indicadores, análises, insights e recomendações para os ciclos seguintes. Os resultados também eram apresentados diretamente aos clientes.",
-				},
-				{
-					title: "Dashboards de Social Media Analytics",
-					description:
-						"Construção de dashboards para acompanhamento contínuo dos resultados mensais das redes sociais, facilitando a consulta dos principais indicadores e a identificação de variações de desempenho.",
-				},
-				{
-					title: "Estudos de mercado e concorrência",
-					description:
-						"Desenvolvimento de estudos orientados por dados para compreender comportamentos de mercado, estratégias adotadas por concorrentes e oportunidades sazonais de conteúdo e comunicação.",
-				},
-				{
-					title: "Dashboard de alocação de horas",
-					description:
-						"Desenvolvimento de dashboards internos para acompanhar as horas dedicadas pelas equipes a diferentes clientes e projetos, substituindo um processo que anteriormente era realizado manualmente em planilhas de Excel.",
-				},
-				{
-					title: "Análise de mídia paga",
-					description:
-						"Análise dos dados de campanhas de mídia paga para identificar oportunidades de otimização de custos e melhoria de desempenho dos investimentos.",
-				},
-			],
-			impact: [
-				"A substituição do acompanhamento manual em Excel por dashboards centralizou a visualização das horas dedicadas por equipe e cliente, apoiando uma gestão mais eficiente do tempo e da capacidade das áreas.",
-				"Os relatórios, estudos e dashboards ampliaram a visibilidade dos clientes sobre o desempenho digital e apoiaram ajustes em conteúdo, estratégias sazonais e campanhas de mídia paga.",
-			],
-		},
-	},
-	{
-		company: "A3Data",
-		linkedin: "https://www.linkedin.com/company/a3data-consultoria/",
-		logo: "https://www.google.com/s2/favicons?domain=a3data.com.br&sz=128",
-		logoFallback: "A3",
-		role: "Analista de Dados → Cientista de Dados",
-		period: "Set. 2021 – mar. 2023",
-		context:
-			"Atuação em projetos de Analytics para áreas como Logística, FP&A, Vendas e Marketing, desenvolvendo dashboards e análises para diferentes necessidades de negócio.",
-		contributions: [
-			"Desenvolvimento de dashboards para acompanhamento operacional, financeiro e comercial.",
-			"Análises exploratórias combinando dados internos e públicos para apoiar decisões de mídia e planejamento comercial.",
-		],
-		technologies: ["SQL", "Power BI", "Python", "R", "AWS"],
-		details: {
-			keyChallenges: [
-				"Atendimento simultâneo a diferentes áreas.",
-				"Atuação com clientes de segmentos distintos.",
-				"Adaptação a novas tecnologias analíticas.",
-				"Condução autônoma de projetos.",
-				"Primeira experiência com dados de mídia paga.",
-			],
-			challenges: [
-				"Atuei durante seis meses como cientista de dados em um projeto para uma empresa do setor automotivo, conduzindo a maior parte da frente analítica de forma autônoma, com apoio pontual de um Tech Lead e de um Scrum Master, além de manter contato direto com a equipe do cliente.",
-				"O desafio era compreender como sazonalidade, perfil dos clientes e potencial regional poderiam orientar uma distribuição mais eficiente dos investimentos em mídia.",
-			],
-			projects: [
-				{
-					title: "Dashboard de mídia e sazonalidade",
-					description:
-						"Desenvolvimento de um dashboard que relacionava o desempenho de mídia às variações de temperatura e ao perfil demográfico dos clientes, apoiando a análise de tendências sazonais e o planejamento de vendas.",
-				},
-				{
-					title: "Estudo de potencial regional",
-					description:
-						"Construção de um estudo de quadrantes que cruzava o histórico de vendas com dados públicos sobre a frota de veículos no Brasil, permitindo identificar regiões com maior potencial e orientar a alocação dos investimentos em mídia.",
-				},
-			],
-			impact: [
-				"Nos 60 dias seguintes aos ajustes de investimento orientados pelo estudo, as vendas em Minas Gerais aumentaram 20%, enquanto investimentos em regiões já maduras puderam ser reduzidos.",
-			],
-		},
-	},
-	{
-		company: "Indra Company",
-		linkedin: "https://www.linkedin.com/company/indra/",
-		logo: "https://www.google.com/s2/favicons?domain=indragroup.com&sz=128",
-		logoFallback: "Indra",
-		role: "Analista de Dados",
-		period: "Fev. 2020 – set. 2021",
-		context:
-			"Migração e evolução de dashboards no projeto Bradesco LGPD.",
-		contributions: [
-			"Reestruturação e redesenho de sete dashboards para melhorar a leitura dos indicadores.",
-			"Identificação de uma inconsistência em dados protocolares durante a análise exploratória, permitindo sua avaliação e correção.",
-		],
-		technologies: ["SQL", "Power BI", "Excel", "Azure"],
-		details: {
-			keyChallenges: [
-				"Primeira experiência profissional na área de Dados.",
-				"Atuação em uma equipe multidisciplinar de 27 profissionais.",
-				"Adaptação a diferentes ferramentas e tecnologias.",
-				"Atuação como único analista na etapa inicial do projeto.",
-			],
-			challenges: [
-				"Durante minha atuação como desenvolvedor de software, trabalhei em uma equipe multidisciplinar de 27 profissionais, contexto que exigia alinhamento frequente e comunicação clara entre diferentes funções para manter a continuidade das entregas.",
-				"Posteriormente, ao migrar para Analytics, assumi a atuação como único analista de dados durante aproximadamente cinco meses na etapa inicial do projeto de LGPD do Bradesco.",
-				"Recebi sete dashboards originalmente construídos pela equipe de engenharia que precisavam evoluir em organização visual, clareza dos indicadores e storytelling para facilitar a interpretação pelos stakeholders.",
-				"Durante a análise exploratória e validação da qualidade dos dados, identifiquei inconsistências no registro de protocolos e conduzi a investigação junto ao time de engenharia até localizar a origem do problema no front-end da aplicação.",
-			],
-			projects: [
-				{
-					title: "Evolução de dashboards de LGPD",
-					description:
-						"Migração e redesenho de sete dashboards, com foco em melhorar a hierarquia das informações, a leitura dos indicadores e a comunicação visual dos resultados.",
-				},
-				{
-					title: "Monitoramento de protocolos",
-					description:
-						"Construção de dois novos dashboards para acompanhamento do status dos protocolos, ampliando a visibilidade sobre o andamento das solicitações e apoiando o monitoramento operacional do projeto.",
-				},
-			],
-			impact: [
-				"A investigação das inconsistências nos protocolos levou à identificação e correção de uma falha com potencial impacto sobre o tratamento de dados sensíveis. Segundo feedback direto do cliente, esse resultado contribuiu para a decisão de prorrogar o contrato com a Indra por mais seis meses.",
-			],
-		},
-	},
-];
+import { getTranslator, type Locale } from "../i18n/locale";
+import { experiencesByLocale } from "../i18n/experiences";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslator(locale);
+
+const experiences = experiencesByLocale[locale];
 ---
 
 <section class="experience" id="experiencia" aria-labelledby="experience-title">
 	<div class="container">
 		<div class="section-heading">
-			<p class="section-label">Trajetória</p>
+			<p class="section-label">{t("Trajetória", "Career")}</p>
 
-			<h2 id="experience-title">Experiência profissional</h2>
+			<h2 id="experience-title">{t("Experiência profissional", "Professional experience")}</h2>
 
 			<p>
-				Soluções analíticas desenvolvidas em diferentes contextos de negócio,
-				da definição dos indicadores à comunicação dos resultados.
+				{t("Soluções analíticas desenvolvidas em diferentes contextos de negócio, da definição dos indicadores à comunicação dos resultados.", "Analytical solutions developed across different business contexts, from defining metrics to communicating findings.")}
 			</p>
 		</div>
 
@@ -233,7 +35,7 @@ const experiences = [
 									href={experience.linkedin}
 									target="_blank"
 									rel="noopener noreferrer"
-									aria-label={`Ver ${experience.company} no LinkedIn (abre em nova aba)`}
+									aria-label={t(`Ver ${experience.company} no LinkedIn (abre em nova aba)`, `View ${experience.company} on LinkedIn (opens in a new tab)`)}
 								>
 									<span class="company-logo">
 										<img
@@ -265,21 +67,21 @@ const experiences = [
 							{experience.contributions.map((item) => <li>{item}</li>)}
 						</ul>
 
-						<ul class="technologies" aria-label="Tecnologias utilizadas">
+						<ul class="technologies" aria-label={t("Tecnologias utilizadas", "Technologies used")}>
 							{experience.technologies.map((item) => <li>{item}</li>)}
 						</ul>
 
 						<details class="experience-details">
 							<summary class="details-toggle">
 								<span class="toggle-icon" aria-hidden="true"></span>
-								<span>Projetos e desafios</span>
+								<span>{t("Projetos e desafios", "Projects and challenges")}</span>
 							</summary>
 
 							<div class="details-content">
 								{
 									experience.details.keyChallenges?.length > 0 && (
 										<div class="details-section">
-											<p class="details-label">Desafios-chave</p>
+											<p class="details-label">{t("Desafios-chave", "Key challenges")}</p>
 
 											<ul>
 												{experience.details.keyChallenges.map((item) => (
@@ -293,7 +95,7 @@ const experiences = [
 								{
 									experience.details.challenges.length > 0 && (
 										<div class="details-section">
-											<p class="details-label">Principais desafios</p>
+											<p class="details-label">{t("Principais desafios", "Challenges in detail")}</p>
 
 											<ul>
 												{experience.details.challenges.map((item) => (
@@ -307,7 +109,7 @@ const experiences = [
 								{
 									experience.details.projects.length > 0 && (
 										<div class="details-section">
-											<p class="details-label">Projetos relevantes</p>
+											<p class="details-label">{t("Projetos relevantes", "Selected projects")}</p>
 
 											<div class="projects-list">
 												{experience.details.projects.map((project) => (
@@ -324,7 +126,7 @@ const experiences = [
 								{
 									experience.details.impact?.length > 0 && (
 										<div class="details-section">
-											<p class="details-label">Impacto</p>
+											<p class="details-label">{t("Impacto", "Impact")}</p>
 
 											<ul>
 												{experience.details.impact.map((item) => (
@@ -341,8 +143,7 @@ const experiences = [
 										experience.details.projects.length === 0 &&
 										!experience.details.impact?.length && (
 											<p class="details-empty">
-												Os detalhes desta experiência serão adicionados nesta
-												área.
+												{t("Os detalhes desta experiência serão adicionados nesta área.", "Details of this experience will be added here.")}
 											</p>
 										)
 								}

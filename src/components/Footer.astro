@@ -1,4 +1,13 @@
 ---
+import { getTranslator, type Locale } from "../i18n/locale";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslator(locale);
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -7,14 +16,14 @@ const currentYear = new Date().getFullYear();
 		<div class="footer-main">
 			<div class="footer-identity">
 				<a class="footer-name" href="#inicio">Klemerson Gomes</a>
-				<p>Dados &amp; Analytics</p>
+				<p>{t("Dados & Analytics", "Data & Analytics")}</p>
 			</div>
 
-			<nav class="footer-navigation" aria-label="Navegação do rodapé">
-				<a href="#inicio">Início</a>
-				<a href="#sobre">Sobre</a>
-				<a href="#experiencia">Experiência</a>
-				<a href="#contato">Contato</a>
+			<nav class="footer-navigation" aria-label={t("Navegação do rodapé", "Footer navigation")}>
+				<a href="#inicio">{t("Início", "Home")}</a>
+				<a href="#sobre">{t("Sobre", "About")}</a>
+				<a href="#experiencia">{t("Experiência", "Experience")}</a>
+				<a href="#contato">{t("Contato", "Contact")}</a>
 			</nav>
 
 			<a
@@ -28,7 +37,7 @@ const currentYear = new Date().getFullYear();
 		</div>
 
 		<div class="footer-bottom">
-			<p>© {currentYear} · Desenvolvido por Klemerson Gomes com apoio de inteligência artificial.</p>
+			<p>© {currentYear} · {t("Desenvolvido por Klemerson Gomes com apoio de inteligência artificial.", "Built by Klemerson Gomes with support from artificial intelligence.")}</p>
 		</div>
 	</div>
 </footer>

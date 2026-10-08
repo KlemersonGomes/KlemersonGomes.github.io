@@ -1,22 +1,29 @@
 ---
 import Header from "../components/Header.astro";
+import { getTranslator, localeHome, type Locale } from "../i18n/locale";
 import "../styles/global.css";
 
 interface Props {
 	title: string;
 	description: string;
+	locale?: Locale;
 }
 
-const { title, description } = Astro.props;
+const { title, description, locale = "en" } = Astro.props;
+const t = getTranslator(locale);
+const site = Astro.site ?? Astro.url;
+const englishUrl = new URL(localeHome("en"), site);
+const portugueseUrl = new URL(localeHome("pt"), site);
+const canonicalUrl = locale === "en" ? englishUrl : portugueseUrl;
 
 const socialImage = new URL(
-	"/social-preview.png",
+	locale === "en" ? "/social-preview-en.png" : "/social-preview.png",
 	Astro.site ?? Astro.url
 );
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={locale === "en" ? "en" : "pt-BR"}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,14 +31,20 @@ const socialImage = new URL(
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl.toString()} />
+    <link rel="alternate" hreflang="en" href={englishUrl.toString()} />
+    <link rel="alternate" hreflang="pt-BR" href={portugueseUrl.toString()} />
+    <link rel="alternate" hreflang="x-default" href={englishUrl.toString()} />
 		<meta name="author" content="Klemerson Gomes" />
 		<meta name="theme-color" content="#111827" />
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 		<meta property="og:type" content="website" />
-		<meta property="og:locale" content="pt_BR" />
-		<meta property="og:site_name" content="Klemerson Gomes | Dados & Analytics" />
+		<meta property="og:locale" content={locale === "en" ? "en_US" : "pt_BR"} />
+    <meta property="og:locale:alternate" content={locale === "en" ? "pt_BR" : "en_US"} />
+    <meta property="og:url" content={canonicalUrl.toString()} />
+		<meta property="og:site_name" content={t("Klemerson Gomes | Dados & Analytics", "Klemerson Gomes | Data & Analytics")} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={socialImage.toString()} />
@@ -39,7 +52,7 @@ const socialImage = new URL(
 		<meta property="og:image:height" content="630" />
 		<meta
 			property="og:image:alt"
-			content="Portfólio profissional de Klemerson Gomes"
+			content={t("Portfólio profissional de Klemerson Gomes", "Klemerson Gomes professional portfolio")}
 		/>
 
 		<meta name="twitter:card" content="summary_large_image" />
@@ -49,7 +62,7 @@ const socialImage = new URL(
 	</head>
 
 	<body>
-		<Header />
+		<Header locale={locale} />
 		<slot />
 	</body>
 </html>

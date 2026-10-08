@@ -1,60 +1,63 @@
+---
+import { getTranslator, type Locale } from "../i18n/locale";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+const t = getTranslator(locale);
+---
+
 <section class="about-section" id="sobre" aria-labelledby="titulo-sobre">
 	<div class="container">
 		<div class="about-intro">
 			<div>
-				<p class="section-label">Sobre mim</p>
+				<p class="section-label">{t("Sobre mim", "About me")}</p>
 
 				<h2 id="titulo-sobre">
-					Analytics na interseção entre
-					<strong>dados, negócio e comunicação.</strong>
+					{t("Analytics na interseção entre", "Analytics at the intersection of")}
+					<strong>{t("dados, negócio e comunicação.", "data, business, and communication.")}</strong>
 				</h2>
 			</div>
 
 			<div class="about-copy">
 				<p class="lead">
-					Sou um profissional de Dados e Analytics com mais de cinco anos de
-					experiência em Analytics e Business Intelligence.
+					{t("Sou um profissional de Dados e Analytics com quase sete anos de experiência profissional. Minha atuação tem foco em Analytics e Business Intelligence.", "I am a Data and Analytics professional with nearly seven years of professional experience. My work focuses on Analytics and Business Intelligence.")}
 				</p>
 
 				<p>
-					Minha atuação parte da compreensão do problema de negócio e avança
-					para a definição de indicadores, análise dos dados, construção de
-					dashboards e comunicação dos resultados.
+					{t("Minha atuação parte da compreensão do problema de negócio e avança para a definição de indicadores, análise dos dados, construção de dashboards e comunicação dos resultados.", "I start by understanding the business problem, then define metrics, analyze data, build dashboards, and communicate the findings.")}
 				</p>
 
 				<p>
-					Tenho maior experiência com Power BI, DAX, Power Query e Excel, ao
-					mesmo tempo em que amplio minha atuação com SQL, Python, Streamlit e
-					IA aplicada a Analytics.
+					{t("Tenho maior experiência com Power BI, DAX, Power Query e Excel, ao mesmo tempo em que amplio minha atuação com SQL, Python, Streamlit e IA aplicada a Analytics.", "My strongest experience is with Power BI, DAX, Power Query, and Excel, while I continue to expand my work with SQL, Python, Streamlit, and AI applied to Analytics.")}
 				</p>
 			</div>
 		</div>
 
-		<div class="pillars" aria-label="Principais pilares profissionais">
+		<div class="pillars" aria-label={t("Principais pilares profissionais", "Core professional strengths")}>
 			<article>
 				<span>01</span>
-				<h3>Entendimento de negócio</h3>
+				<h3>{t("Entendimento de negócio", "Business understanding")}</h3>
 				<p>
-					Transformação de necessidades pouco estruturadas em perguntas
-					analíticas, indicadores e critérios de decisão.
+					{t("Transformação de necessidades pouco estruturadas em perguntas analíticas, indicadores e critérios de decisão.", "Turning loosely defined needs into analytical questions, metrics, and decision criteria.")}
 				</p>
 			</article>
 
 			<article>
 				<span>02</span>
-				<h3>Execução analítica</h3>
+				<h3>{t("Execução analítica", "Analytical delivery")}</h3>
 				<p>
-					Modelagem, análise, visualização e desenvolvimento de soluções que
-					tornam os dados compreensíveis e utilizáveis.
+					{t("Modelagem, análise, visualização e desenvolvimento de soluções que tornam os dados compreensíveis e utilizáveis.", "Modeling, analysis, visualization, and development of solutions that make data understandable and usable.")}
 				</p>
 			</article>
 
 			<article>
 				<span>03</span>
-				<h3>Comunicação</h3>
+				<h3>{t("Comunicação", "Communication")}</h3>
 				<p>
-					Apresentação de resultados com contexto, clareza e foco no que os
-					stakeholders precisam compreender ou decidir.
+					{t("Apresentação de resultados com contexto, clareza e foco no que os stakeholders precisam compreender ou decidir.", "Presenting findings with context and clarity, focused on what stakeholders need to understand or decide.")}
 				</p>
 			</article>
 		</div>
