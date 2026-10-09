@@ -50,7 +50,7 @@ const t = getTranslator(locale);
 					<div class="portfolio-contact-item">
 						<span class="portfolio-contact-item-label">{t("Telefone", "Phone")}</span>
 						<span class="portfolio-contact-item-value">
-							(83) 9 9832-3431
+							{t("(83) 9 9832-3431", "+55 (83) 9 9832-3431")}
 						</span>
 					</div>
 				</div>
@@ -62,6 +62,7 @@ const t = getTranslator(locale);
 <style>
 	.portfolio-contact {
 		padding-block: 5rem 6.5rem;
+		border-top: 1px solid var(--color-border);
 		scroll-margin-top: 72px;
 	}
 
